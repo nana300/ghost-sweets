@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.25 168.62">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9f5223;
+        font-family: BIZ-UDPMincho-Medium, 'BIZ UDPMincho';
+        font-size: 128.07px;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        stroke-width: 5px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #9f5223;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_1-2" data-name="レイヤー 1">
+    <g>
+      <text class="cls-1" transform="translate(.81 112.69)"><tspan x="0" y="0">U</tspan></text>
+      <path class="cls-2" d="M2.5,126.87c10.22,0,10.22,12.02,20.45,12.02s10.22-12.02,20.45-12.02,10.22,12.02,20.45,12.02,10.23-12.02,20.45-12.02,10.23,12.02,20.45,12.02"/>
+      <path class="cls-3" d="M2.5,142.2c10.22,0,10.22,12.02,20.45,12.02s10.22-12.02,20.45-12.02,10.22,12.02,20.45,12.02,10.23-12.02,20.45-12.02,10.23,12.02,20.45,12.02"/>
+      <path class="cls-4" d="M2.5,156.1c10.22,0,10.22,12.02,20.45,12.02s10.22-12.02,20.45-12.02,10.22,12.02,20.45,12.02,10.23-12.02,20.45-12.02,10.23,12.02,20.45,12.02"/>
+    </g>
+  </g>
+</svg>

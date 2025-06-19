@@ -1,0 +1,347 @@
+/* -----------------文字の色----------------- */
+.custom-brown {
+  color: rgba(166, 83, 9, 1)
+}
+
+/* -----------------背景グラデーションA -----------------*/
+.GradationA {
+  position: relative;
+  z-index: 1;
+  /* 背景より上に中身を表示するため */
+}
+
+/* 背景グラデーションアニメーション */
+.GradationA::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #ffffff 0%, #ccc0b5 50%, #9e9674 100%);
+  animation: Grad 4s infinite alternate;
+  z-index: -1;
+  /* 中身の下に配置 */
+  opacity: 0.5;
+}
+
+@keyframes Grad {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* -----------------グラデーションB----------------- */
+.GradationB {
+  position: relative;
+  z-index: 1;
+  /* 背景より上に中身を表示するため */
+}
+
+.GradationB::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #ffffff 0%, #664628 50%, #a299d6 100%);
+  animation: Grad 4s infinite alternate;
+  z-index: -1;
+  /* 中身の下に配置 */
+  opacity: 0.5;
+}
+
+@keyframes Grad {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* -----------------グラデーションC----------------- */
+.GradationC {
+  position: relative;
+  z-index: 1;
+  /* 背景より上に中身を表示するため */
+}
+
+.GradationC::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #e2dee4 0%, #f7eadf 50%, #c7c0da 100%);
+  animation: Grad 4s infinite alternate;
+  z-index: -1;
+  /* 中身の下に配置 */
+  opacity: 0.5;
+}
+
+@keyframes Grad {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+/* --------------------基本のレイアウト幅-------------------- */
+.container-ghost {
+  max-width: 960px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* --------------------フォント-------------------- */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.ghost-heading {
+  font-size: 1.25rem;
+  line-height: 2;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  /* 少しゆったりさせたいとき */
+  font-family: 'Shippori Mincho B1', serif;
+  /* 上品な明朝体なら */
+}
+
+/* --------------------フェードイン-------------------- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  /* もう少し大きくふわっと下から */
+  transition: opacity 1.8s ease-out, transform 1.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes ghost-float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.fade-in-section.is-visible {
+  animation: ghost-float 3s ease-in-out infinite;
+}
+
+/* --------------------GIFキャラクターのサイズ設定-------------------- */
+.character-S {
+  width: 150%;
+}
+
+/* --------------------メインカルーセルの上にGIFが来るように設定-------------------- */
+.character-xs-overlap {
+  position: absolute;
+  top: 95%;
+  /* 上からの距離 */
+  left: 10%;
+  width: 20vw;
+  /* デスクトップ・スマホ共通で20vw */
+  max-width: none;
+  /* ← 制限を解除する */
+  min-width: 80px;
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* スマホ向けは位置だけ変える場合 */
+@media (max-width: 576px) {
+  .character-xs-overlap {
+    top: 110%;
+    left: 5%;
+    /* widthは30vwで同じ */
+  }
+}
+
+/* GIFキャラクター03 画像スタイル（重なり表示＆レスポンシブ） */
+.character-gif {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 30vw;
+  /* ビューポート幅に応じて拡大 */
+  max-width: 300px;
+  /* 最大サイズ */
+  min-width: 100px;
+  /* 最小サイズ */
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+  transform: translateY(70%);
+  /* 少し下に重ねる */
+}
+
+/* スマホ向け：中央寄せ＆サイズUP */
+@media (max-width: 576px) {
+  .character-gif {
+    left: 50%;
+    transform: translate(-75%, 30%);
+    width: 45vw;
+  }
+}
+
+/* デフォルト（PC・タブレット） */
+#about p {
+  margin-top: 15rem;
+}
+
+/* スマホ向け：文字の上の余白をなくす */
+@media (max-width: 576px) {
+  #about p {
+    margin-top: 0;
+  }
+
+}
+
+
+iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* --------------------寿司カルーセル全体の枠-------------------- */
+.sushi-carousel-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  touch-action: pan-y;
+}
+
+.sushi-carousel-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollCarousel 30s linear infinite;
+  will-change: transform;
+}
+
+.sushi-carousel-container:hover .sushi-carousel-track {
+  animation-play-state: paused;
+}
+
+.sushi-carousel-track .card {
+  display: inline-block;
+  margin-right: 16px;
+  width: 220px;
+  /* ↑ここ150～220で画像サイズの調節 */
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  /* ↑アスペクト比を保ったまま拡大 */
+}
+
+@media (min-width: 576px) {
+  .sushi-carousel-track .card {
+    width: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sushi-carousel-track .card {
+    width: 220px;
+  }
+}
+
+@media (min-width: 992px) {
+  .sushi-carousel-track .card {
+    width: 250px;
+  }
+}
+
+@keyframes scrollCarousel {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/*-------------------- MAPのレスポンシブ-------------------- */
+/* 通常サイズ（PC・タブレット） */
+.responsive-map {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  display: block;
+}
+
+/* マップ親要素のパディング調整 */
+.map-wrapper {
+  padding: 3rem 1rem;
+}
+
+/* スマホ時の調整 */
+@media (max-width: 576px) {
+  .responsive-map {
+    height: 280px;
+  }
+
+  .map-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* --------------------TOP画像ボタン-------------------- */
+/* 通常サイズ（PCなど） */
+.back-to-top-img {
+  width: 150px;
+  height: 150px;
+  right: 20px
+}
+
+/* スマホ向けサイズ（576px以下） */
+@media (max-width: 576px) {
+  .back-to-top-img {
+    width: 80px;
+    height: 80px;
+    right: 20px
+  }
+}
+
+footer {
+  background: linear-gradient(to right, #8395a5, #aeacd1);
+  /* 白→ブルー→ラベンダー */
+  color: #333;
+}
